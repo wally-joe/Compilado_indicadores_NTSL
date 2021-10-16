@@ -1,0 +1,1 @@
+# Compilado_indicadores_NTSL
