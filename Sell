@@ -1,0 +1,35 @@
+var
+  mmexptrix, mmexpmacd: float;
+  d                   : integer;
+begin
+  mmexptrix := MediaExp(9,TRIX(9,1));
+  mmexpmacd := MediaExp(9,MACD(26,12,9));
+  d:=0;
+
+  if (TRIX(9,1) < mmexptrix) then
+  begin
+    d:=d-1;
+  end;
+  if (Tangente(5,9)<-1) then
+  begin
+    d:=d-1;
+  end;
+  if (MACD(26,12,9) < mmexpmacd) then
+  begin
+    d:=d-1;
+  end;
+  if (DIMais(17) < DImenos(17)) then
+  begin
+    d:=d-1;
+  end;
+  if (HiloActivator(4) > Close) then
+  begin
+    d:=d-1;
+  end;
+  if (d <= -4) then
+  begin
+    paintbar(clMaroon);
+    Alert(clMaroon);
+  end;
+  plot(d);
+end;
